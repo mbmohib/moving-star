@@ -1,28 +1,21 @@
-# Webpack Boilarplate
+# Moving Star
 
-This is a simple **Webpack Boilarplate**. That
+Project Link : https://mbmohib.github.io/moving-star/
 
-  - Compile Latest JS using Babel
-  - Compile SASS
-  - Auto Reload when css or js change
+This is a demo for **Moving Star**. 
+
 
 
 ### Installation
 ```sh
 Make sure you have node installed
-clone this repo using "git clone https://mbmohib@bitbucket.org/mbmohib/webpack-boilarplate.git"
-cd webpack-boilarplate
+clone this repo using "git clone <link>"
+cd <folder-name>
 run "npm  install"
 run "npm run dev" for development server
 run "npm run build" for production
 ```
 
-
-### Todos
-
- - Separate config for deterministic hash
- - Add html auto reload
- - Add sharing IP
 
 License
 ----

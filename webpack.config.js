@@ -7,7 +7,8 @@ const extractPlugin = new ExtractTextPlugin({
 
 module.exports = {
     entry: {
-        bundle: './src/js/bootstrap.js'
+        bundle: './src/js/bootstrap.js',
+        vendor: './node_modules/barba.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
