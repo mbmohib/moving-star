@@ -1,63 +1,83 @@
-particlesJS("particles-js", {
-    particles: {
-        number: { 
-            value: 260, 
-            density: { 
-                enable: true, 
-                value_area: 800 
-            } 
-        },
-        color: { 
-            value: "#ffffff" 
-        },
-        shape: {
-            type: "circle",
-            stroke: { width: 0, color: "#000000" },
-            polygon: { nb_sides: 5 },
-            image: { src: "img/github.svg", width: 100, height: 100 }
-        },
-        opacity: {
-            value: 1,
-            random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0, sync: false }
-        },
-        size: {
-            value: 3,
-            random: true,
-            anim: { enable: false, speed: 4, size_min: 0.3, sync: false }
-        },
-        line_linked: {
-            enable: false,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 3,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: { enable: false, rotateX: 600, rotateY: 600 }
+const articles = document.querySelectorAll('.articles');
+const navs = document.querySelectorAll('nav ul li a');
+const intro = document.querySelector('.intro');
+const introHeading = intro.querySelector('h1');
+
+const clearTl = new TimelineLite();
+
+clearTl
+    .set(articles, { display: 'none', autoAlpha: 0 })
+
+
+function enter(article) {
+    const enterTl = new TimelineLite();
+
+    enterTl
+        .set(article.children, {autoAlpha: 0})
+        .fromTo(article, 0.7, 
+            { display: 'none', autoAlpha: 0, scale: 0 }, 
+            { display: 'block', autoAlpha: 1, scale: 1 }
+        )
+        .to(article.children[0], 0.3, { autoAlpha: 1 }, '-=0.1')
+        .to(article.children[1], 0.3, { autoAlpha: 1 }, '-=0.2')
+    ;
+}
+
+function exit(article) {
+    const exitTl = new TimelineLite();
+
+    exitTl
+        .set(article, { display: 'none', autoAlpha: 0 });
+}
+
+function removeLinkActive() {
+    navs.forEach( nav => {
+        nav.classList.remove('active');
+    })
+}
+
+function handleClick(e) {
+
+    removeLinkActive();
+
+    intro.classList.add('hide');
+
+    e.preventDefault();
+
+    articles.forEach( article => {
+
+        if (article.style.display == 'block') {
+            exit(article);
         }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: { enable: true, mode: "bubble" },
-            onclick: { enable: true, mode: "repulse" },
-            resize: true
-        },
-        modes: {
-            grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 },
-            repulse: { distance: 400, duration: 0.4 },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 }
+
+        if (article.dataset.target == e.target.dataset.href ) {
+            enter(article)
+            e.target.classList.add('active');
+        } else if (article.dataset.target == e.target.dataset.href) {
+            enter(article)
+            e.target.classList.add('active');
+        } else if (article.dataset.target == e.target.dataset.href) {
+            enter(article)
+            e.target.classList.add('active');
+        } else if (article.dataset.target == e.target.dataset.href) {
+            enter(article)
+            e.target.classList.add('active');
         }
-    },
-    retina_detect: true
+    })
+}
+
+
+navs.forEach(nav => nav.addEventListener('click', handleClick))
+
+
+const typewriter = new Typewriter(introHeading, {
+    loop: false
 });
+
+typewriter
+    .typeString('Hello World!')
+    .pauseFor(2500)
+    .deleteChars(6)
+    .typeString('Bangladesh!')
+    .pauseFor(2500)
+    .start();

@@ -1,7 +1,19 @@
 html {
     body {
+        font-family: 'Roboto', sans-serif;
         color: #fff;
         background: lighten($color: #000000, $amount: 20);
         font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@keyframes displayEffect {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
     }
 }

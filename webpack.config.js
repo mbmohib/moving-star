@@ -8,7 +8,12 @@ const extractPlugin = new ExtractTextPlugin({
 module.exports = {
     entry: {
         bundle: './src/js/bootstrap.js',
-        vendor: './node_modules/barba.js'
+        vendor: [
+            './node_modules/gsap/EasePack.js',
+            './node_modules/gsap/src/uncompressed/utils/',
+            './node_modules/gsap/TweenLite.js',
+            './node_modules/gsap/TimelineLite.js',
+        ],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

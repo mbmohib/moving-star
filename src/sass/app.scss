@@ -1,58 +1,9 @@
 //Import SASS files
 @import 'partials/_basic.scss';
 
-canvas {
-  display: block;
-}
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: #232741;
-    background-image: url("../images/sky-min.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-nav {
-    display: none;
-    ul {
-        display: flex;
-        width: 60%;
-        margin: 20px auto 0;
-        justify-content: space-between;
-        font-size: 130%;
-        
-        li {
-            a {
-                color: #fff;
-                text-transform: capitalize;
-            }
-        }
-    }
-}
-#main-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.intro {
-    width: 100%;
-    text-align: center;
 
-    h1 {
-        color: #fff;
-        font-weight: 300;
-        font-size: 300%;
-    }
 
-    h2 {
-        color: #fff;
-        font-weight: 300;
-        font-size: 200%; 
-    }
-}
-.articles {
-    display: none;
-}
-
+@import 'components/_video.scss';
+@import 'components/_particle.scss';
+@import 'components/_nav.scss';
+@import 'components/_main.scss';

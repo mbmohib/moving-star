@@ -3,41 +3,87 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Webpack Boilarplate</title>
+    <title>Moving Star</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Righteous|Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 <link rel="stylesheet" href="dist/bundle.css">
 
 <body>
 
+    <video autoplay muted id="video">
+        <source src="./src/videos/big-bang-explosion.webm" type="video/mp4">
+    </video>
+
     <div id="particles-js">
 
         <nav>
             <ul>
-                <li><a href="">What is it all about</a></li>
-                <li><a href="">What we do</a></li>
-                <li><a href="">Who we are</a></li>
-                <li><a href="">Who can work with us</a></li>
+                <li><a data-href="what-is-it">What is it all about</a></li>
+                <li><a data-href="what-we-do">What we do</a></li>
+                <li><a data-href="who-we-are">Who we are</a></li>
+                <li><a data-href="work-with-us">Who can work with us</a></li>
+                <li><a href="">Our Client</a></li>
+                <li><a href="">Contact US</a></li>
             </ul>
         </nav>
          
         <div id="main-content">
 
             <div class="intro">
-                <h1>Lorem Ipsum</h1>
-                <h2>Lorem Ipsum Dolar sit Amet</h2>
+                <h1></h1>
             </div>
 
-            <div class="articles">
-                <div class="article--heading">
-                    What is it about ?
+            <div id="article-wrapper">
+
+                <div class="articles" data-target="what-is-it">
+                    <div class="article--heading">
+                        What is it about ?
+                    </div>
+                
+                    <div class="article--content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae blanditiis fugit. Dolor inventore explicabo fugit,
+                        blanditiis, voluptas voluptatibus ad, ullam impedit sunt perspiciatis ex deserunt similique! Perspiciatis, saepe
+                        praesentium.
+                    </div>
                 </div>
-            
-                <div class="article--content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae blanditiis fugit. Dolor inventore explicabo fugit,
-                    blanditiis, voluptas voluptatibus ad, ullam impedit sunt perspiciatis ex deserunt similique! Perspiciatis, saepe
-                    praesentium.
+                
+                <div class="articles" data-target="what-we-do">
+                    <div class="article--heading">
+                         What we do!
+                    </div>
+                
+                    <div class="article--content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae blanditiis fugit. Dolor inventore explicabo fugit,
+                        blanditiis, voluptas voluptatibus ad, ullam impedit sunt perspiciatis ex deserunt similique! Perspiciatis, saepe
+                        praesentium.
+                    </div>
                 </div>
+                
+                <div class="articles" data-target="who-we-are">
+                    <div class="article--heading">
+                         Who we are!
+                    </div>
+                
+                    <div class="article--content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae blanditiis fugit. Dolor inventore explicabo fugit,
+                        blanditiis, voluptas voluptatibus ad, ullam impedit sunt perspiciatis ex deserunt similique! Perspiciatis, saepe
+                        praesentium.
+                    </div>
+                </div>
+                
+                <div class="articles" data-target="work-with-us">
+                    <div class="article--heading">
+                         Who can work with us!
+                    </div>
+                
+                    <div class="article--content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae blanditiis fugit. Dolor inventore explicabo fugit,
+                        blanditiis, voluptas voluptatibus ad, ullam impedit sunt perspiciatis ex deserunt similique! Perspiciatis, saepe
+                        praesentium.
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -47,8 +93,12 @@
 
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+    
 
     <script type="text/javascript" src="dist/vendor.js"></script>
+    <script type="text/javascript" src="https://www.greensock.com/js/src/utils/SplitText.min.js"></script>
+    
     <script type="text/javascript" src="dist/bundle.js"></script>
 </body>
 
