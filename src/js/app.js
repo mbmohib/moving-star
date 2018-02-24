@@ -1,7 +1,11 @@
 const articles = document.querySelectorAll('.articles');
-const navs = document.querySelectorAll('nav ul li a');
+const navLinks = document.querySelectorAll('nav ul li a');
 const intro = document.querySelector('.intro');
 const introHeading = intro.querySelector('h1');
+const video = document.getElementById('video');
+const mainContent = document.getElementById('main-content');
+const particles = document.getElementById('particles-js');
+const nav = document.querySelector('nav');
 
 const clearTl = new TimelineLite();
 
@@ -31,7 +35,7 @@ function exit(article) {
 }
 
 function removeLinkActive() {
-    navs.forEach( nav => {
+    navLinks.forEach( nav => {
         nav.classList.remove('active');
     })
 }
@@ -67,7 +71,7 @@ function handleClick(e) {
 }
 
 
-navs.forEach(nav => nav.addEventListener('click', handleClick))
+navLinks.forEach(nav => nav.addEventListener('click', handleClick))
 
 
 const typewriter = new Typewriter(introHeading, {
@@ -81,3 +85,14 @@ typewriter
     .typeString('Bangladesh!')
     .pauseFor(2500)
     .start();
+
+
+video.addEventListener('ended', () => {
+    video.style.display = 'none';
+    particles.style.display = 'block';
+    mainContent.style.display = 'block';
+    nav.style.display = 'block';
+})
+
+
+video.play();
